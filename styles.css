@@ -1,13 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* Gradient background */
-    color: #333;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #ffffff; /* Set background to white */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .container {
