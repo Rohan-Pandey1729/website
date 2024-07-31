@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Gradient background */
     color: #333;
     margin: 0;
     padding: 0;
@@ -26,4 +26,15 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
 }
