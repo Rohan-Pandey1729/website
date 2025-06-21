@@ -3,27 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Rohan Pandey - Research Scientist & ML Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Rohan Pandey</h1>
-        <p> I'm a Research Scientist and Machine Learning Engineer. I'm currently a Project Manager Intern at NASA for the LUCY L'SPACE Mission.</p>
-        <p>I study Applied and Computational Mathematical Sciences with a concentration in Scientific Computing and Numerical Analysis at University of Washington. I also am minoring in Neural Computation and Engineering with an interest to have an application of AI in Neuroscience. </p>
-        <p>I have a passion for Neuroscience research and you can find my most recent research paper linked below that analyzes the Birth-Death model of Oncostreams in Glioma. Note: There is a LOT of math...  </p>
-        <p>I was the Lead Embedded Systems Engineer at the Society of Advanced Rocket Propulsion (SARP) club at UW. I worked on building the Autonomous Recovery Electronics System for our rocket (which was successful at our participation at Spaceport America Cup).</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">RP</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-        <p>In my off time, I play competitive tennis at UW and I enjoy playing many board games, although Monopoly has to be my favorite (probably because I haven't lost in a few years).</p>
-        <p>I love to meet new people, so please shoot me an email if you want to talk! Or play a game of Monopoly.</p>
-        <nav>
-            <a href="resume.pdf">Resume</a>
-            <a href="https://www.linkedin.com/in/rohanpandeymath/">LinkedIn</a>
-            <a href="https://github.com/Rohan-Pandey1729/">GitHub</a>
-            <a href="mailto:rpande@uw.edu">Email</a>
-            <a href="https://arxiv.org/abs/2407.10983">Cancer modeling paper</a>
-        </nav>
-    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Rohan Pandey</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Research Scientist & Machine Learning Engineer</h2>
+                    <p class="hero-description">
+                        Currently a Data Scientist Intern at Fred Hutch, working on CAR T-cell therapy modeling. 
+                        Passionate about neuroscience research, AI applications, and rocket propulsion.
+                        Check out my updated resume for the latest experience and achievements.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="resume.pdf" class="btn btn-secondary" target="_blank">View Updated Resume</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <i class="fas fa-dna"></i>
+                        <span>Cancer Research</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-brain"></i>
+                        <span>ML & AI</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-rocket"></i>
+                        <span>Aerospace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a Research Scientist and Machine Learning Engineer with a passion for pushing the boundaries of technology and science. Currently pursuing Applied and Computational Mathematical Sciences with a concentration in Scientific Computing and Numerical Analysis at the University of Washington.</p>
+                    
+                    <p>I'm also minoring in Neural Computation and Engineering, focusing on AI applications in Neuroscience. My research interests include cancer modeling, particularly CAR T-cell therapy optimization, and developing computational solutions for complex biological systems.</p>
+                    
+                    <p>When I'm not working on cutting-edge research or building rockets, you can find me playing competitive tennis at UW or dominating board games (especially Monopoly - I haven't lost in years!). I love collaborating with others and exploring new technologies.</p>
+                </div>
+                <div class="skills">
+                    <h3>Skills & Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Cancer Research</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Rocket Propulsion</span>
+                        <span class="skill-tag">Mathematical Modeling</span>
+                        <span class="skill-tag">Scientific Computing</span>
+                        <span class="skill-tag">AI Applications</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Reinforcement Learning</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Data Scientist Intern</h3>
+                        <h4>Fred Hutch - Seattle, WA</h4>
+                        <p class="timeline-date">August 2024 - Present</p>
+                        <p>Developed mathematical models based on systems of ODEs to simulate CAR T-cell and tumor interactions using parameter sets from B-ALL patient data. Applied linear regression and MSE loss to train models predicting therapy outcomes and assess treatment plan efficacy.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>ML Intern</h3>
+                        <h4>Naval Surface Warfare Center - Bellevue, WA</h4>
+                        <p class="timeline-date">October - December 2024</p>
+                        <p>Developed a reinforcement learning framework using DDPG agents in MATLAB and Simulink to optimize aerodynamic efficiency in axial turbomachinery. Simulated complex physical dynamics with embedded control loops and reward functions targeting lift, drag, and energy efficiency tradeoffs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Intern</h3>
+                        <h4>MINDCO LABS - Seattle, WA</h4>
+                        <p class="timeline-date">September - December 2024</p>
+                        <p>Designed and implemented an advanced real-time eye-tracking system for non-invasive brain-computer-interface to map gaze to on-screen word location. Integrated gaze tracking with EEG headset signals to support a deep learning pipeline aiming to decode cognitive signals into textual output.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Lead Engineer</h3>
+                        <h4>Society of Advanced Rocket Propulsion - Seattle, WA</h4>
+                        <p class="timeline-date">October 2022 - June 2024</p>
+                        <p>Engineered ARES: a GPS-guided rocket recovery system with autonomous drogue deployment logic and fail-safe mechanisms for high-altitude reentry. Built a real-time telemetry pipeline in C++ and Python to acquire, process, and transmit GPS and flight data from onboard microcontrollers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Cancer Modeling Research</h3>
+                    <p>Mathematical analysis of the Birth-Death model of Oncostreams in Glioma using advanced computational methods. Published research contributing to understanding cancer progression and treatment strategies.</p>
+                    <a href="https://arxiv.org/abs/2407.10983" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Paper
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ML Backdoor Research</h3>
+                    <p>Research on undetectable checksum-triggered backdoors in MLPs trained on MNIST, achieving stealth misclassification with advanced cryptographic methods and adversarial ML techniques.</p>
+                    <a href="https://drive.google.com/file/d/1V_9-0oTqYPZiQl4nhkCybbh8S508Y4Dq/view?usp=sharing" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Research Poster
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>ARES Recovery System</h3>
+                    <p>GPS-guided rocket recovery system with autonomous drogue deployment logic and fail-safe mechanisms. Real-time telemetry pipeline for high-altitude reentry and flight data processing.</p>
+                    <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Hackathon Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-intro">I love to meet new people and collaborate on exciting projects. Feel free to reach out!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:rpande@uw.edu">rpande@uw.edu</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/rohanpandeymath/" target="_blank">Connect with me</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Rohan-Pandey1729/" target="_blank">View my work</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Resume</h3>
+                    <a href="resume.pdf" target="_blank">Download Updated PDF</a>
+                </div>
+            </div>
+            
+            <div class="contact-cta">
+                <p>Interested in collaborating on a project or just want to chat about research, rockets, or Monopoly strategies?</p>
+                <a href="mailto:rpande@uw.edu" class="btn btn-primary">Send me a message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Rohan Pandey. Built with passion for science and technology.</p>
+        </div>
+    </footer>
+
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
 </body>
-</html>
+</html> 
