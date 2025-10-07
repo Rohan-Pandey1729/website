@@ -578,6 +578,17 @@ section {
     color: #764ba2;
 }
 
+.project-status {
+    display: inline-block;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
 /* Contact Section */
 .contact {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
