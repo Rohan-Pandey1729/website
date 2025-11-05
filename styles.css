@@ -286,63 +286,68 @@ body {
     transform: translateY(-3px);
 }
 
-/* Fixed Floating Cards - Better Positioning */
+/* Floating Cards laid out in a single responsive row */
 .hero-visual {
-    position: relative;
-    height: 500px;
+    display: flex;
+    justify-content: center; /* center row by default */
+    gap: 2rem;
+    align-items: center;
     width: 100%;
+    padding: 2rem 0;
 }
 
 .floating-card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     color: #fff;
     animation: float 6s ease-in-out infinite;
-    width: 140px;
+    width: 160px;
     text-align: center;
+    margin: 0 0.75rem;
+    transform: translateY(0);
 }
 
-.floating-card:nth-child(1) {
-    top: 5%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.floating-card:nth-child(2) {
-    top: 45%;
-    right: 10%;
-    animation-delay: 1.5s;
-}
-
-.floating-card:nth-child(3) {
-    bottom: 10%;
-    left: 20%;
-    animation-delay: 3s;
-}
-
-.floating-card:nth-child(4) {
-    top: 15%;
-    right: 35%;
-    animation-delay: 4.5s;
-}
-
-.floating-card i {
+.floating-card i, .floating-card .math-symbol {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
 .floating-card span {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-visual { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .floating-card { width: 140px; }
+}
+
+/* 3D car canvas container */
+#car-3d {
+    width: 100%;
+    max-width: 900px;
+    height: 340px;
+    margin: 2.25rem auto 1.25rem auto; /* spacing between floating cards and model */
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none; /* non-interactive for now */
+}
+
+#car-3d canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
 }
 
 @keyframes float {

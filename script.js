@@ -361,3 +361,136 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// --- 3D Car: simple low-poly car rendered with Three.js ---
+function initCar3D() {
+    if (typeof THREE === 'undefined') return; // Three.js not loaded
+    const container = document.getElementById('car-3d');
+    if (!container) return;
+
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.set(0, 1.2, 3);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    container.appendChild(renderer.domElement);
+    // Allow interaction on the canvas
+    container.style.pointerEvents = 'auto';
+    renderer.domElement.style.display = 'block';
+
+    // Lights
+    const hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+    hemi.position.set(0, 1, 0);
+    scene.add(hemi);
+
+    const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+    dir.position.set(5, 10, 7);
+    scene.add(dir);
+
+    // Car group (placeholder until model loads)
+    const car = new THREE.Group();
+
+    // Body
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0xe74c3c, metalness: 0.3, roughness: 0.4 });
+    const bodyGeo = new THREE.BoxGeometry(1.4, 0.32, 0.8);
+    const body = new THREE.Mesh(bodyGeo, bodyMat);
+    body.position.y = 0.35;
+    car.add(body);
+
+    // Cabin / roof
+    const roofGeo = new THREE.BoxGeometry(0.8, 0.25, 0.68);
+    const roof = new THREE.Mesh(roofGeo, new THREE.MeshStandardMaterial({ color: 0xcc3b2f, metalness: 0.2, roughness: 0.35 }));
+    roof.position.set(0, 0.55, 0);
+    car.add(roof);
+
+    // Wheels
+    const wheelGeo = new THREE.CylinderGeometry(0.18, 0.18, 0.12, 16);
+    const wheelMat = new THREE.MeshStandardMaterial({ color: 0x111111, metalness: 0.6, roughness: 0.6 });
+    function makeWheel(x, z) {
+        const w = new THREE.Mesh(wheelGeo, wheelMat);
+        w.rotation.z = Math.PI / 2;
+        w.position.set(x, 0.18, z);
+        return w;
+    }
+
+    car.add(makeWheel(0.55, 0.35));
+    car.add(makeWheel(-0.55, 0.35));
+    car.add(makeWheel(0.55, -0.35));
+    car.add(makeWheel(-0.55, -0.35));
+
+    // Subtle ground plane
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.MeshStandardMaterial({ color: 0x000000, transparent: true, opacity: 0.02 }));
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = 0;
+    scene.add(ground);
+
+    scene.add(car);
+
+    // Orbit controls
+    let controls;
+    try {
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.07;
+        controls.enablePan = false;
+        controls.minDistance = 1.5;
+        controls.maxDistance = 10;
+        controls.target.set(0, 0.3, 0);
+    } catch (e) {
+        // OrbitControls not available
+        controls = null;
+    }
+
+    // Try loading a realistic glTF car model; fallback to procedural car if load fails
+    const modelUrl = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/CesiumMilkTruck/glTF/CesiumMilkTruck.gltf';
+    let loadedModel = null;
+    if (typeof THREE.GLTFLoader !== 'undefined') {
+        try {
+            const loader = new THREE.GLTFLoader();
+            loader.load(modelUrl, (gltf) => {
+                loadedModel = gltf.scene;
+                // scale and position
+                loadedModel.scale.set(0.01, 0.01, 0.01);
+                loadedModel.position.set(0, 0, 0);
+                scene.remove(car);
+                scene.add(loadedModel);
+                if (controls) controls.target.set(0, 0.3, 0);
+            }, undefined, (err) => {
+                console.warn('GLTF load failed, using procedural car', err);
+            });
+        } catch (e) {
+            console.warn('GLTFLoader not available, using procedural car', e);
+        }
+    }
+
+    // Animation
+    let clock = new THREE.Clock();
+    function animate() {
+        const t = clock.getElapsedTime();
+        const subject = loadedModel || car;
+        subject.rotation.y = Math.sin(t * 0.5) * 0.12 + t * 0.03; // slow rotation + gentle oscillation
+        subject.position.y = Math.sin(t * 2) * 0.02;
+        if (controls) controls.update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Handle resize
+    function onResize() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+    }
+    window.addEventListener('resize', onResize);
+}
+
+document.addEventListener('DOMContentLoaded', initCar3D);
