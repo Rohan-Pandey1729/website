@@ -139,6 +139,20 @@ body {
     width: 100%;
 }
 
+/* Active nav link (scrollspy) */
+.nav-link.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -383,6 +397,45 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Publications styles */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.publication-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.publication-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.publication-card a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.pub-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0.5rem;
+}
+
+.pub-abstract {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
 }
 
 /* About Section */

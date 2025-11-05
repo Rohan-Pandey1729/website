@@ -41,6 +41,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scrollspy: highlight nav link for section in view
+(function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    if (!navLinks.length || !sections.length) return;
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;
+            const link = document.querySelector(`.nav-link[href="#${id}"]`);
+            if (link) {
+                if (entry.isIntersecting) {
+                    // remove active from others and set active on this
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Also mark clicked nav link as active immediately
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            // close mobile menu if open
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            if (hamburger && navMenu && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+})();
+
 // Navbar background change on scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
