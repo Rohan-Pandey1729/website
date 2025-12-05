@@ -367,25 +367,36 @@ body {
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
 }
 
 /* Section Styles */
 section {
-    padding: 5rem 0;
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.25rem;
 }
 
 .section-title {
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 0.75rem;
     background: linear-gradient(45deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: #555;
+    opacity: 0.85;
 }
 
 /* Publications styles */
@@ -571,12 +582,12 @@ section {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.25rem;
 }
 
 .project-card {
     background: #fff;
-    padding: 2rem;
+    padding: 2.25rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -584,8 +595,8 @@ section {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
 }
 
 .project-icon {
@@ -606,13 +617,13 @@ section {
 
 .project-card h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: #333;
 }
 
 .project-card p {
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
 }
 
@@ -639,6 +650,35 @@ section {
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.5rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+}
+
+.project-status.award {
+    background: linear-gradient(45deg, #ffb347, #ffcc33);
+    color: #3b2d00;
+    box-shadow: 0 8px 20px rgba(255, 179, 71, 0.35);
+}
+
+.hackathons {
+    background: #f8f9fb;
+}
+
+.hackathon-card {
+    border: 1px solid #eaeaea;
+}
+
+.hackathon-card .project-icon {
+    background: linear-gradient(45deg, #34c759, #0fb9b1);
+}
+
+.hackathon-card .project-link {
+    color: #0f9bff;
 }
 
 /* Contact Section */
