@@ -222,17 +222,8 @@
                         <i class="fas fa-code-branch"></i>
                     </div>
                     <h3>ThinkSwitch: Context-Distilled Dual-Mode LoRAs</h3>
-                    <p>Developed a dual-mode LLM training framework that alternates between low-compute “instruct” and high-compute “thinking” modes. Uses context distillation, LoRA deltas, and MergeKit blending to iteratively boost reasoning on software engineering tasks.</p>
+                    <p>Developed a dual-mode LLM training framework that alternates between low-compute "instruct" and high-compute "thinking" modes. Uses context distillation, LoRA deltas, and MergeKit blending to iteratively boost reasoning on software engineering tasks.</p>
                     <span class="project-status">In Progress</span>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Quantization Blindspots: Model Compression vs. Backdoor Defenses</h3>
-                    <p>Examining how common backdoor defenses fail once models are quantized (FP32 → INT8/INT4). Early results show quantization can both mask triggers and erode detector signals, exposing a deployment-stage vulnerability in defense pipelines.</p>
-                    <span class="project-status">In progress</span>
                 </div>
 
                 <div class="project-card">
@@ -281,20 +272,6 @@
             <div class="projects-grid">
                 <div class="project-card hackathon-card">
                     <div class="project-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>BloomSync AI</h3>
-                    <p>AI-guided bioinformatics pipeline that proposes FT/TFL1 gene edits to enable new-wood fruiting and robotics-ready orchards. Aggregates genomics data, aligns flowering genes, and uses RL with a neural reward model to score edits.</p>
-                    <div class="project-meta">
-                        <span class="project-status award">2nd Place — DubHacks</span>
-                        <a href="https://devpost.com/software/bloomsync-ai" class="project-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View on Devpost
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card hackathon-card">
-                    <div class="project-icon">
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3>Husky Maps</h3>
@@ -302,6 +279,20 @@
                     <div class="project-meta">
                         <span class="project-status award">2nd Place — Anthropic Claude Hackathon</span>
                         <a href="https://devpost.com/software/husky-maps" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View on Devpost
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card hackathon-card">
+                    <div class="project-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>BloomSync AI</h3>
+                    <p>AI-guided bioinformatics pipeline that proposes FT/TFL1 gene edits to enable new-wood fruiting and robotics-ready orchards. Aggregates genomics data, aligns flowering genes, and uses RL with a neural reward model to score edits.</p>
+                    <div class="project-meta">
+                        <span class="project-status award">2nd Place — DubHacks</span>
+                        <a href="https://devpost.com/software/bloomsync-ai" class="project-link" target="_blank">
                             <i class="fas fa-external-link-alt"></i> View on Devpost
                         </a>
                     </div>
@@ -317,6 +308,14 @@
                 <h2 class="section-title">Publications</h2>
             </div>
             <div class="publications-grid">
+                <div class="publication-card">
+                    <h3>
+                        <a href="https://arxiv.org/abs/2512.06243" target="_blank">Quantization Blindspots: How Model Compression Breaks Backdoor Defenses</a>
+                    </h3>
+                    <p class="pub-meta">arXiv:2512.06243 — cs.LG, cs.CR</p>
+                    <p class="pub-abstract">Systematic empirical study of five representative backdoor defenses across three precision settings (FP32, INT8, INT4) on vision benchmarks. We observe that INT8 quantization reduces detection rates to 0% while leaving attack success rates above 99%, exposing a critical mismatch between defense evaluation and real-world deployment.</p>
+                </div>
+
                 <div class="publication-card">
                     <h3>
                         <a href="https://arxiv.org/abs/2407.10983" target="_blank">Analyzing the birth-death model of Oncostreams in Glioma, and the effects of Cytochalasin D treatment</a>
